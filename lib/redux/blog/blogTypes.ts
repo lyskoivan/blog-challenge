@@ -19,12 +19,11 @@ export interface Error {
     config: object | null;
 }
 
-export interface PostsState {
-    posts: Array<Post>;
-}
-
-export interface ErrorState {
-    error: Error | null;
+export interface BlogState {
+    blog: {
+        posts: Array<Post>;
+        error: Error | null;
+    };
 }
 
 export interface CreatePost {
