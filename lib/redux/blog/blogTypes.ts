@@ -12,12 +12,19 @@ export interface Post {
     body: string;
 }
 
+export interface Error {
+    message: string | null;
+    name: string | null;
+    stack: string | null;
+    config: object | null;
+}
+
 export interface PostsState {
     posts: Array<Post>;
 }
 
 export interface ErrorState {
-    error: any;
+    error: Error | null;
 }
 
 export interface CreatePost {
@@ -38,7 +45,7 @@ interface CreatePostSuccessAction {
 
 interface CreatePostErrorAction {
     type: typeof CREATE_POST_ERROR;
-    payload: { error: any };
+    payload: { error: Error };
 }
 
 export type CreatePostActionTypes = CreatePostStartAction | CreatePostSuccessAction | CreatePostErrorAction;
@@ -56,7 +63,7 @@ interface GetPostsSuccessAction {
 
 interface GetPostsErrorAction {
     type: typeof GET_POSTS_ERROR;
-    payload: { error: any };
+    payload: { error: Error };
 }
 
 export type GetPostsActionTypes = GetPostsStartAction | GetPostsSuccessAction | GetPostsErrorAction;
