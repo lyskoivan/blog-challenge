@@ -1,0 +1,32 @@
+{
+    "name": "blog-dt",
+    "version": "0.1.0",
+    "private": false,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.22.0",
+        "@typescript-eslint/parser": "^2.22.0",
+        "axios": "^0.19.2",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.18.3",
+        "next": "9.2.2",
+        "prettier": "^1.19.1",
+        "react": "16.13.0",
+        "react-dom": "16.13.0",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
+        "styled-components": "^5.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^13.7.7",
+        "@types/react": "^16.9.23",
+        "@types/react-dom": "^16.9.5",
+        "typescript": "^3.8.3"
+    }
+}
