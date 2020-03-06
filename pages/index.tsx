@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import Link from 'next/link';
+import { Post } from '../redux/blog/blogTypes';
 
-import Header from '../components/Header/Header';
+import * as selectors from '../redux/blog/blogSelectors';
+import * as operatons from '../redux/blog/blogOperations';
 
-const Home = () => (
-    <>
-        <h1>Home page</h1>
-    </>
-);
+import PostsList from '../components/PostsList';
 
-export default Home;
+interface Props {
+    posts: Array<Post>;
+    getPosts: any;
+}
+
+const index = ({ posts, getPosts }: Props): JSX.Element => {
+    useEffect(() => {
+        getPosts();
+    }, []);
+
+    return (
+        <div>
+            <PostsList posts={posts} />
+        </div>
+    );
+};
+
+interface StateProps {
+    posts: Array<Post>;
+}
+
+const mapStateToProps = (store): StateProps => ({
+    posts: selectors.getPosts(store),
+});
+
+const mapDispatchToProps = {
+    getPosts: operatons.getPosts,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(index);
