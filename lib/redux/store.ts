@@ -6,6 +6,6 @@ import rootReducer from './rootReducer';
 
 const enhancer = composeWithDevTools(applyMiddleware(thunk));
 
-const store = createStore(rootReducer, enhancer);
-
-export default store;
+export const initStore = () => {
+    return createStore(rootReducer, enhancer);
+};
