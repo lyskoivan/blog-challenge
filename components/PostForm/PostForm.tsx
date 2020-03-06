@@ -5,6 +5,8 @@ import * as types from '../../redux/blog/blogTypes';
 
 import { createPost } from '../../redux/blog/blogOperations';
 
+import { Form, FormInput, FormLabel, FormButton } from './PostForm.styled';
+
 interface Props {
     createPost: any;
 }
@@ -41,17 +43,17 @@ const PostForm = ({ createPost }: Props): JSX.Element => {
         reset();
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <Form onSubmit={handleSubmit}>
+            <FormLabel>
                 Title
-                <input type="text" value={title} name="title" onChange={onChangeTitle} />
-            </label>
-            <label>
+                <FormInput type="text" value={title} name="title" onChange={onChangeTitle} />
+            </FormLabel>
+            <FormLabel>
                 Body
-                <input type="text" value={body} name="body" onChange={onChangeBody} />
-            </label>
-            <button type="submit">Add Post</button>
-        </form>
+                <FormInput type="text" value={body} name="body" onChange={onChangeBody} />
+            </FormLabel>
+            <FormButton type="submit">Add Post</FormButton>
+        </Form>
     );
 };
 
