@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
 
-import { Post } from '../../../redux/blog/blogTypes';
+import * as types from '../../../redux/blog/blogTypes';
 
 import { getPost } from '../../../redux/blog/blogSelectors';
 import { getPostById } from '../../../redux/blog/blogOperations';
 
+import Post from '../../../components/Post';
+
 interface Props {
-    post: Post;
+    post: types.Post;
     getPostById: any;
 }
 
@@ -20,11 +22,11 @@ const PostPage = ({ post, getPostById }: Props): JSX.Element => {
         getPostById(id);
     }, []);
 
-    return <>{post && <p>{post.body}</p>}</>;
+    return <>{post && <Post post={post} />}</>;
 };
 
 interface StateProps {
-    post: Post;
+    post: types.Post;
 }
 
 const mapStateToProps = (store): StateProps => ({

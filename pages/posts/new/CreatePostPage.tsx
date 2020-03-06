@@ -1,10 +1,12 @@
 import React from 'react';
 
-const CreatePostPage = () => {
+import PostForm from '../../../components/PostForm';
+
+const CreatePostPage = (): JSX.Element => {
     return (
-        <div>
-            <h1>Create post</h1>
-        </div>
+        <>
+            <PostForm />
+        </>
     );
 };
 
