@@ -31,3 +31,19 @@ export const getPostsError = (error): types.GetPostsActionTypes => ({
     type: types.GET_POSTS_ERROR,
     payload: { error },
 });
+
+// Get post
+
+export const getPostStart = (): types.GetPostActionTypes => ({
+    type: types.GET_POST_START,
+});
+
+export const getPostSuccess = (post: types.Post): types.GetPostActionTypes => ({
+    type: types.GET_POST_SUCCESS,
+    payload: { post },
+});
+
+export const getPostError = (error): types.GetPostActionTypes => ({
+    type: types.GET_POST_ERROR,
+    payload: { error },
+});
