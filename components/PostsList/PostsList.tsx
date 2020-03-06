@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Post } from '../../redux/blog/blogTypes';
 
+import { PostList } from './PostsList.styled';
+
 import PostsListItem from '../PostsListItem';
 
 interface Props {
@@ -10,11 +12,11 @@ interface Props {
 
 const PostsList = ({ posts = [] }: Props): JSX.Element => {
     return (
-        <ul>
+        <PostList>
             {posts.map(post => (
                 <PostsListItem key={post.id} post={post} />
             ))}
-        </ul>
+        </PostList>
     );
 };
 

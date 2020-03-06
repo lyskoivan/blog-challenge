@@ -1,20 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { HeaderList, HeaderListItem, HeaderLink } from './Header.styled';
+
 const Header = (): JSX.Element => (
     <header>
-        <ul>
-            <li>
-                <Link href="/">
-                    <a>Home</a>
+        <HeaderList>
+            <HeaderListItem>
+                <Link prefetch href="/" passHref>
+                    <HeaderLink>Home</HeaderLink>
                 </Link>
-            </li>
-            <li>
-                <Link href="/posts/new">
-                    <a>New post</a>
+            </HeaderListItem>
+            <HeaderListItem>
+                <Link prefetch href="/posts/new" passHref>
+                    <HeaderLink>New post</HeaderLink>
                 </Link>
-            </li>
-        </ul>
+            </HeaderListItem>
+        </HeaderList>
     </header>
 );
 
